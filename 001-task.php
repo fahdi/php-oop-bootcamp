@@ -9,5 +9,6 @@ class Task {
 }
 
 $task = new Task("This is my first task");
+$task2 = new Task("This is my second task");
 
-var_dump($task->description);
+var_dump($task2->description);
