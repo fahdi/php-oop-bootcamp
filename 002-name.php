@@ -3,7 +3,7 @@
 class Person
 {
     public $name;
-    public $age;
+    private $age;
 
     public function __construct($name)
     {
@@ -28,7 +28,7 @@ class Person
 $john = new Person("John Doe");
 $john->setAge(19);
 
-$john->age = 15; #should not happen
+//$john->age = 15; #should not happen
 
 var_dump($john);
 
