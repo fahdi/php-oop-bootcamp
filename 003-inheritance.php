@@ -10,10 +10,10 @@ class Mother
 
 }
 
-class Child extends Mother{
-
+class Child extends Mother
+{
 
 
 }
 
-var_dump ((new Child())->getEyeCount());
+var_dump((new Child())->getEyeCount());
