@@ -43,10 +43,9 @@ class Triangle extends Shape
 
 class Circle extends Shape
 {
-
     protected $radius = 4;
 
-    public  function getRadius()
+    public function getRadius()
     {
         return $this->radius;
     }
