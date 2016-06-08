@@ -2,16 +2,17 @@
 
 class Shape
 {
-    protected $length;
-    public function getArea()
-    {
-                return pow($this->length,2);
-    }
+
 }
 
 class Square extends Shape
 {
+    protected $length;
 
+    public function getArea()
+    {
+        return pow($this->length, 2);
+    }
 }
 
 class Triangle extends Shape
