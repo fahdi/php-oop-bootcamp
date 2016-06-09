@@ -58,7 +58,7 @@ class Staff
 }
 
 $fahad = new Person("Fahad Murtaza");
-$staff = new Staff();
+$staff = new Staff($fahad);
 $universal_coders = new Business($staff);
 
 $universal_coders->hire($fahad);
