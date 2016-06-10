@@ -2,30 +2,30 @@
 
 interface Logger
 {
-    
+    public function execute($message);
 }
 
 class LogToFile implements Logger
 {
     public function execute($message)
     {
-        var_dump('log the message to file = '. $message);
+        var_dump('log the message to file = ' . $message);
     }
 }
 
-class LogToDatabase
+class LogToDatabase implements Logger
 {
     public function execute($message)
     {
-        var_dump('log the message to database');
+        var_dump('log the message to database = ' . $message);
     }
 }
 
-class LogToSlack
+class LogToSlack implements Logger
 {
     public function execute($message)
     {
-        var_dump('log the message to slack');
+        var_dump('log the message to slack = ' . $message);
     }
 }
 
@@ -34,7 +34,7 @@ class UserController
 {
     protected $logger;
 
-    public function __construct(LogToFile $logger)
+    public function __construct(Logger $logger)
     {
         $this->logger = $logger;
 
@@ -48,6 +48,11 @@ class UserController
 
 }
 
-$controller = new UserController(new LogToFile());
+$controller = new UserController(new LogToSlack());
 
 $controller->show();
+
+$controller = new UserController(new LogToDatabase());
+
+$controller->show();
+
